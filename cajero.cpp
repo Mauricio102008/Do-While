@@ -25,6 +25,10 @@ int main(){
         case 3:
         cout<<"Has elegido retirar dinero, ingresa la cantidad a retirar" <<endl;
         cin>>retiro;
+        if (retiro <= 0) {
+            cout << "Cantidad invalida. No se puede retirar una cantidad negativa o cero." << endl;
+            break;
+        }
         if (retiro <= saldo) {
             saldo = saldo - retiro;
             cout<<"Tu nuevo saldo es $"<<saldo<<endl;
@@ -33,7 +37,8 @@ int main(){
         }
         break;
         default:
-        return 0;
+            cout << "Opcion invalida. Por favor, selecciona una opcion valida." << endl;
+            break;
     }
 
     } while (opcion != 4);
